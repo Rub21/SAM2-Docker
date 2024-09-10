@@ -1,0 +1,14 @@
+services:
+  sam2:
+    image: sam2:v1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+    - "8000:8000"
+    volumes:
+    - ./:/home
+    env_file:
+    - ./.env
+    restart: always
+  
